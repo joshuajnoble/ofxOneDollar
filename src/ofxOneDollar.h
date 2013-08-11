@@ -15,12 +15,13 @@ struct Vec2d {
 		tmp.x = x - rOther.x;
 		tmp.y = y - rOther.y;
 		return tmp;
-	}
+	};
 	
 	Vec2d operator =(const Vec2d& rOther) {
 		x = rOther.x;
 		y = rOther.y;
-	}
+        return *this;
+	};
 };
 
 struct ofxOneDollarRect {
@@ -42,7 +43,7 @@ struct ofxGesture {
 	}
 	
 	void draw() {
-		std::vector<Vec2d>::iterator it = points.begin();
+		/*std::vector<Vec2d>::iterator it = points.begin();
 		glBegin(GL_LINE_STRIP);
 		while(it != points.end()) {
 			glVertex2f((*it).x, (*it).y);
@@ -57,7 +58,7 @@ struct ofxGesture {
 			glVertex2f((*it_res).x, (*it_res).y);
 			++it_res;
 		}
-		glEnd();
+		glEnd();*/
 		ofCircle(center.x, center.y, 5);
 	}
 
